@@ -1,29 +1,19 @@
+// Were we supposed to use ts-brand?
+
 interface MajorCredits {
   credits: number;
-  brand: "MajorCredits";
+  brand: string;
 }
 
 interface MinorCredits {
-  credits: number;
-  brand: "MinorCredits";
+    credits: number;
+    brand: string;
+  }
+  
+function sumMajorCredits(subject1:number, subject2:number):MajorCredits {
+    return {credits: subject1 + subject2, brand: "MajorCredits"}
 }
 
-function sumMajorCredits(
-  subject1: MajorCredits,
-  subject2: MajorCredits
-): MajorCredits {
-  return {
-    credits: subject1.credits + subject2.credits,
-    brand: "MajorCredits",
-  };
-}
-
-function sumMinorCredits(
-  subject1: MinorCredits,
-  subject2: MinorCredits
-): MinorCredits {
-  return {
-    credits: subject1.credits + subject2.credits,
-    brand: "MinorCredits",
-  };
+function sumMinorCredits(subject1:number, subject2:number):MinorCredits {
+    return {credits: subject1 + subject2, brand: "MinorCredits"}
 }
